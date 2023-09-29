@@ -20,8 +20,7 @@ public class ControleRemotoBasico implements ControleRemoto {
         dispositivo.ajustarCanal(canal);
     }
 
-    @Override
     public String getStatus() {
-        return "Controle Remoto Básico";
+        return dispositivo.getStatus();
     }
 }

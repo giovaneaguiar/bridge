@@ -20,14 +20,7 @@ public class ControleRemotoAvancado implements ControleRemoto {
         dispositivo.ajustarCanal(canal);
     }
 
-    public void ligarMudo() {
-    }
-
-    public void desligarMudo() {
-    }
-
-    @Override
     public String getStatus() {
-        return "Controle Remoto Avançado";
+        return dispositivo.getStatus();
     }
 }

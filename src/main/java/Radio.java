@@ -1,4 +1,5 @@
 public class Radio implements DispositivoEntretenimento {
+
     private boolean ligado = false;
     private double estacao = 0.0;
     private boolean mudo = false;
@@ -15,15 +16,17 @@ public class Radio implements DispositivoEntretenimento {
 
     @Override
     public void ajustarCanal(int canal) {
-        estacao = canal;
+        if (ligado) {
+            estacao = canal;
+        }
     }
 
-    public void ligarMudo() {
-        mudo = true;
+    public boolean isLigado() {
+        return ligado;
     }
 
-    public void desligarMudo() {
-        mudo = false;
+    public double getEstacao() {
+        return estacao;
     }
 
     public boolean isMudo() {
@@ -41,6 +44,14 @@ public class Radio implements DispositivoEntretenimento {
         } else {
             return "Rádio está desligado";
         }
+    }
+
+    public void ligarMudo() {
+        mudo = true;
+    }
+
+    public void desligarMudo() {
+        mudo = false;
     }
 
 }
